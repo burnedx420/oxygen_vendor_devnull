@@ -52,3 +52,5 @@ PRODUCT_COPY_FILES += \
 
 # Google Apps
 $(call inherit-product, vendor/google/gapps.mk)
+
+WITH_DEXPREOPT:=true
