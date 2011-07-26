@@ -1,7 +1,7 @@
 #
 # Set ro.modversion
 #
-ifdef devnull_RELEASE
+ifdef DEVNULL_RELEASE
     PRODUCT_PROPERTY_OVERRIDES += \
         ro.modversion=DevNull-1.1
 else
