@@ -1,2 +1,2 @@
 add_lunch_combo devnull_bravo-user
-add_lunch_combo devnull_galaxys2-user
+add_lunch_combo devnull_galaxys2-eng
