@@ -35,6 +35,104 @@ OPTICHARGER=$ANDROID_BUILD_TOP/vendor/devnull/tools/opticharger
 QUIET=-q
 DELETE_BINS="applypatch applypatch_static check_prereq recovery updater"
 
+DELETE_ENG="
+system/app/Development.apk
+system/app/Development.odex
+system/app/SpareParts.apk
+system/app/SpareParts.odex
+system/app/Term.apk
+system/app/Term.odex
+system/bin/audioloop
+system/bin/badblocks
+system/bin/dump_image
+system/bin/e2fsck
+system/bin/e2label
+system/bin/erase_image
+system/bin/flash_image
+system/bin/gdbjithelper
+system/bin/gdbserver
+system/bin/InputChannel_test
+system/bin/InputDispatcher_test
+system/bin/InputPublisherAndConsumer_test
+system/bin/InputReader_test
+system/bin/keystore_cli
+system/bin/Looper_test
+system/bin/mke2fs
+system/bin/ObbFile_test
+system/bin/qemud
+system/bin/qemu-props
+system/bin/radiooptions
+system/bin/record
+system/bin/resize2fs
+system/bin/rtp_test
+system/bin/showlease
+system/bin/skia_test
+system/bin/stagefright
+system/bin/String8_test
+system/bin/testid3
+system/bin/tune2fs
+system/bin/unyaffs
+system/bin/wpa_cli
+system/etc/mke2fs.conf
+system/lib/hw/gps.goldfish.so
+system/lib/hw/sensors.goldfish.so
+system/lib/invoke_mock_media_player.so
+system/lib/libc_malloc_debug_leak.so
+system/lib/libc_malloc_debug_qemu.so
+system/lib/libext2_blkid.so
+system/lib/libext2_com_err.so
+system/lib/libext2_e2p.so
+system/lib/libext2fs.so
+system/lib/libext2_profile.so
+system/lib/libext2_uuid.so
+system/lib/libpagemap.so
+system/lib/libterm.so
+system/xbin/add-property-tag
+system/xbin/agent
+system/xbin/attest
+system/xbin/avinfo
+system/xbin/avtest
+system/xbin/bdaddr
+system/xbin/btool
+system/xbin/bttest
+system/xbin/check-lost+found
+system/xbin/cpueater
+system/xbin/crasher
+system/xbin/daemonize
+system/xbin/dbus-monitor
+system/xbin/dbus-send
+system/xbin/dhdutil
+system/xbin/directiotest
+system/xbin/hciconfig
+system/xbin/hcidump
+system/xbin/hcitool
+system/xbin/hstest
+system/xbin/l2ping
+system/xbin/l2test
+system/xbin/latencytop
+system/xbin/librank
+system/xbin/lmptest
+system/xbin/nc
+system/xbin/netperf
+system/xbin/netserver
+system/xbin/opcontrol
+system/xbin/oprofiled
+system/xbin/procmem
+system/xbin/procrank
+system/xbin/rawbu
+system/xbin/rctest
+system/xbin/rfcomm
+system/xbin/scotest
+system/xbin/scp
+system/xbin/sdptest
+system/xbin/showmap
+system/xbin/showslab
+system/xbin/sqlite3
+system/xbin/ssh
+system/xbin/strace
+system/xbin/tcpdump
+system/xbin/timeinfo
+system/xbin/vfp-crasher"
 
 REPACK=$OUT/repack.d
 printf "Sanitizing environment..."
@@ -66,6 +164,9 @@ $SED -i \
 
 # Delete unnecessary binaries
 ( cd $REPACK/ota/system/bin; echo $DELETE_BINS | xargs rm -f; )
+
+# Delete eng files
+( cd $REPACK/ota; echo $DELETE_ENG | xargs rm -f; )
 
 # Delete leftover wireless driver
 rm -rf $REPACK/ota/system/lib/modules/*/kernel/drivers/net/wireless
