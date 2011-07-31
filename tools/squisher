@@ -168,14 +168,11 @@ $SED -i \
 # Delete eng files
 ( cd $REPACK/ota; echo $DELETE_ENG | xargs rm -f; )
 
-# Delete leftover wireless driver
-rm -rf $REPACK/ota/system/lib/modules/*/kernel/drivers/net/wireless
-
 # No need for recovery
 rm -rf $REPACK/ota/recovery
 
 # Strip modules
-find $REPACK/ota/system/lib/modules -name "*.ko" -print0 | xargs -0 arm-eabi-strip --strip-unneeded
+find `find $REPACK/ota/system -name "modules" -type d` -name "*.ko" -print0 | xargs -0 arm-eabi-strip --strip-unneeded
 
 # Set date
 DATE=`date +%d%m%y-%H%M`

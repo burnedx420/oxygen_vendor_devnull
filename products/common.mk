@@ -12,7 +12,11 @@ endif
 PRODUCT_PROPERTY_OVERRIDES += ro.rommanager.developerid=adamg
 
 # Used by BusyBox
+ifneq ($(BOARD_KERNEL_MODULES_DIR),)
+KERNEL_MODULES_DIR:=$(BOARD_KERNEL_MODULES_DIR)
+else
 KERNEL_MODULES_DIR:=/system/lib/modules
+endif
 
 # Tiny toolbox
 TINY_TOOLBOX:=true
