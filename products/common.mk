@@ -25,7 +25,8 @@ TINY_TOOLBOX:=true
 PRODUCT_PACKAGES += \
     CMScreenshot \
     OxygenSettings \
-    Superuser
+    Superuser \
+    Torch
 
 # Build binaries
 PRODUCT_PACKAGES += \
