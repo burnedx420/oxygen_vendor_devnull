@@ -1,12 +1,12 @@
 #
 # Set ro.modversion
 #
-ifdef DEVNULL_RELEASE
+ifdef OXYGEN_RELEASE
     PRODUCT_PROPERTY_OVERRIDES += \
-        ro.modversion=DevNull-1.1
+        ro.modversion=Oxygen-2.2
 else
     PRODUCT_PROPERTY_OVERRIDES += \
-        ro.modversion=DevNull-TEST
+        ro.modversion=Oxygen-TEST
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += ro.rommanager.developerid=adamg
@@ -52,9 +52,13 @@ PRODUCT_PACKAGE_OVERLAYS += \
     vendor/devnull/overlay
 
 PRODUCT_COPY_FILES += \
-    vendor/devnull/prebuilt/etc/hosts:system/etc/hosts
+    vendor/devnull/prebuilt/etc/hosts:system/etc/hosts \
+    vendor/devnull/prebuilt/etc/init.d/99complete:system/etc/init.d/99complete
 
 # Google Apps
 $(call inherit-product, vendor/google/gapps.mk)
+
+# T-Mobile Theme Engine
+$(call inherit-product, vendor/devnull/products/themes.mk)
 
 WITH_DEXPREOPT:=true
