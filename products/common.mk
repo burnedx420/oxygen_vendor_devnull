@@ -24,6 +24,7 @@ TINY_TOOLBOX:=true
 # Build packages
 PRODUCT_PACKAGES += \
     CMScreenshot \
+    OxygenSettings \
     Superuser
 
 # Build binaries
