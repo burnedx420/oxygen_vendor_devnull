@@ -172,7 +172,7 @@ $SED -i \
 rm -rf $REPACK/ota/recovery
 
 # Strip modules
-find `find $REPACK/ota/system -name "modules" -type d` -name "*.ko" -print0 | xargs -0 arm-eabi-strip --strip-unneeded
+#find `find $REPACK/ota/system -name "modules" -type d` -name "*.ko" -print0 | xargs -0 arm-eabi-strip --strip-unneeded
 
 # Set date
 DATE=`date +%d%m%y-%H%M`

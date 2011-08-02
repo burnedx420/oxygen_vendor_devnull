@@ -62,5 +62,3 @@ $(call inherit-product, vendor/google/gapps.mk)
 
 # T-Mobile Theme Engine
 $(call inherit-product, vendor/devnull/products/themes.mk)
-
-WITH_DEXPREOPT:=true
