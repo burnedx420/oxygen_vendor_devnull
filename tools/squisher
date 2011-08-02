@@ -105,7 +105,6 @@ system/xbin/dhdutil
 system/xbin/directiotest
 system/xbin/hciconfig
 system/xbin/hcidump
-system/xbin/hcitool
 system/xbin/hstest
 system/xbin/l2ping
 system/xbin/l2test
