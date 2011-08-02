@@ -24,7 +24,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # A2SD support
 PRODUCT_COPY_FILES += \
-    vendor/oxygen/prebuilt/etc/init.d/10apps2sd:system/etc/init.d/10apps2sd
+    vendor/devnull/prebuilt/etc/init.d/10apps2sd:system/etc/init.d/10apps2sd
 
 # FM packages
 PRODUCT_PACKAGES += \
